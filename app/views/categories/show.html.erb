@@ -1,0 +1,15 @@
+<h1 class="title"><%= @category.name %></h1>
+
+<% @category.todo_items.each do |todo|%>
+  <% if todo.due_date >= Date.today%>
+  <ul class="due_dates_list">
+    <li class="tasks"><%= link_to todo.title, todo_item_path(todo.id) %> | Due date: <%= todo.due_date %></li>
+  </ul>
+  <% end %>
+<% end %>
+
+<div class="buttons">
+  <div class="button">
+    <%= link_to "Delete all todos", category_path(@category.id), method: :delete %>
+  </div>
+</div>

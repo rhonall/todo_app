@@ -1,0 +1,15 @@
+Rails.application.routes.draw do
+  root to: "todos#index"
+  get "/todos", to: "todos#index"
+  post "/todos", to: "todos#create", as: "todo_items"
+  get "/todos/new", to: "todos#new"
+  get "/todos/:id", to: "todos#show", as: "todo_item"
+  get "/todos/:id/edit", to: "todos#edit", as: "edit_todo_item"
+  patch "/todos/:id", to: "todos#update"
+  delete "/todos/:id", to: "todos#destroy"
+  get "/categories", to: "categories#index"
+  get "/categories/:id", to: "categories#show", as: "category"
+  delete "/categories/:id", to: "categories#destroy"
+  get "/due_dates", to: "due_dates#index"
+  get "/due_dates/:name", to: "due_dates#show", as: "due_date"
+end

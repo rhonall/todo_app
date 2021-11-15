@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo App</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="page_wrapper">
+      <%= render partial: "shared/nav" %>
+      <div class="wrapper">
+        <div class="left_column">
+          <h2 class="due_dates"><%= link_to "Today", due_date_path("today")%></h2>
+          <h2 class="due_dates"><%= link_to "Tomorrow", due_date_path("tomorrow")%></h2>
+          <h2 class="due_dates"><%= link_to "Next 7 Days", due_date_path("next7days")%></h2>
+          
+          <h2 class="lists">Categories:</h2>
+          <% @categories.each do |category| %>
+            <ul>
+              <li><%= link_to category.name, category_path(category.id), class: "list" %></li>
+            </ul>
+          <% end %>
+          </div>  
+        
+        <div class="right_column">
+          <%= yield %>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>

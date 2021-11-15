@@ -1,0 +1,23 @@
+<%= form_with model: @todo_item do |f| %>
+    <div class="form_row">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+    <div class="form_row">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+    <div class="form_row">
+        <%= f.label :category %>
+        <%= f.select(:category_id, @categories_list + [['Create a new one','new']], {:include_blank => 'Please select a category'}) %>
+        <%= f.fields_for :category do |category_subform| %>
+          <%= category_subform.label :name, "New Category" %>
+          <%= category_subform.text_field :name%>
+        <% end %>
+    </div>
+    <div class="form_row">
+      <%= f.label :due_date %>
+      <%= f.date_field :due_date %>
+  </div>
+    <%= f.submit %>
+<% end %>

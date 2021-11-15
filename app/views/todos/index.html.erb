@@ -1,0 +1,14 @@
+<% flash.each do |type, msg| %>
+  <div class="flash_msg">
+    <%= msg %>
+  </div>
+<% end %>
+
+<h1 class="title">Today</h1>
+
+<% @today_tasks.each do |task| %>
+<ul class="due_dates_list">
+  <li><%= link_to task.title, todo_item_path(task.id), class: "tasks" %></li>
+</ul>
+<% end %>
+

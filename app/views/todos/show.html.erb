@@ -1,0 +1,19 @@
+<h1 class="title">🚩 <%= @todo_item.title %></h1>
+<h3>Description</h3>
+<%= @todo_item.description %>
+<h3>Category</h3>
+<%= @todo_item.category.name %>
+<h3>Due Date</h3>
+<%= @todo_item.due_date %>
+<div class="buttons">
+  <div class="button">
+    <%= link_to "Edit", edit_todo_item_path(@todo_item.id) %>
+  </div>
+  <div class="button">
+    <%= link_to "Finished", todo_item_path(@todo_item.id), method: :delete %>
+  </div>
+  <div class="button">
+    <%= link_to "Delete", todo_item_path(@todo_item.id), method: :delete %>
+  </div>
+</div>
+

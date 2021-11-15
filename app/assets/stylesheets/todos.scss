@@ -1,0 +1,95 @@
+// Place all the styles related to the todos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+a {
+  color: black;
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+body {
+  font-family: sans-serif;
+  .page_wrapper {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
+
+nav {
+  display: flex;
+  height: 50px;
+  background-color: #e7e7e7;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+  ul {
+    display: flex;
+    list-style: none;
+  }
+  li {
+    margin-left: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  .left_column {
+    flex: 1, 1, 30%;
+    min-width: 200px;
+    border-right: 2px solid #C4C4C4;
+    .lists {
+      margin-top: 2rem;
+    }
+  }
+  .right_column {
+    flex: 1, 1, 70%;
+    min-width: 600px;
+    margin-left: 2rem;
+  }
+}
+
+
+.buttons {
+  display: flex;
+  margin-top: 2rem;
+  .button {
+    margin-right: 1rem;
+    border: 1px solid black;
+    padding: 0.5rem;
+    border-radius: 5px;
+  }
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.due_dates_list {
+  list-style: circle;
+}
+
+.due_dates {
+  margin-bottom: 1.3rem;
+}
+
+.flash_msg {
+border: 1px solid rgb(111, 146, 111);
+background-color: rgb(224, 253, 224);
+color: rgb(73, 99, 73);
+padding: 0.5rem 0.5rem;
+text-align: center;
+}
+
+.form_row {
+  margin-bottom: 1rem;
+}
+
+
